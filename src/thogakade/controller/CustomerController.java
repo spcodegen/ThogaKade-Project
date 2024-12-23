@@ -23,4 +23,13 @@ public class CustomerController {
         int res=stm.executeUpdate();
         return res>0;
     }
+    public static Customer searchCustomer(String id) throws ClassNotFoundException, SQLException{
+        Connection connection = DBConnection.getInstance().getConnection();
+        Statement stm = connection.createStatement();
+        ResultSet rst = stm.executeQuery("Select * From Customer where id='"+id+"'");
+        if(rst.next()){
+            return new Customer(rst.getString("id"), rst.getString("name"), rst.getString("address"), rst.getDouble("salary"));
+        }
+        return null;
+    }
 }

@@ -5,6 +5,7 @@
 package thogakade.main;
 
 import thogakade.view.AddCustomerForm;
+import thogakade.view.SearchCustomerForm;
 
 /**
  *
@@ -12,6 +13,7 @@ import thogakade.view.AddCustomerForm;
  */
 public class StartMain {
     public static void main(String[] args) {
-        new AddCustomerForm().setVisible(true);
+//        new AddCustomerForm().setVisible(true);
+          new SearchCustomerForm().setVisible(true);
     }
 }
